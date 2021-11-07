@@ -43,7 +43,7 @@ class FormClassComp extends React.Component {
             </option>
             {this.tipOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {option}%
               </option>
             ))}
           </select>

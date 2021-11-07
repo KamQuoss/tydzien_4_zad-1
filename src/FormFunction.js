@@ -36,7 +36,7 @@ const Form = () => {
             </option>
             {tipOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {option}%
               </option>
             ))}
           </select>
