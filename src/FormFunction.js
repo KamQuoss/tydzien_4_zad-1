@@ -13,7 +13,6 @@ const Form = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log("tip is type ", typeof tip);
     let toPay = (tip ? amount * ((100 + tip) / 100) : amount) * taxValue;
     setToPay(toPay);
   };
@@ -29,7 +28,7 @@ const Form = () => {
             name="amount"
             onInput={onAmountChange}
           ></input>
-          <hr/>
+          <hr />
           <label htmlFor="tip-select">Tip: </label>
           <select name="tip-select" onChange={onTipChange}>
             <option key="0" value="">
@@ -41,7 +40,7 @@ const Form = () => {
               </option>
             ))}
           </select>
-          <hr/>
+          <hr />
           <button type="button" onClick={handleClick}>
             Calculate
           </button>
