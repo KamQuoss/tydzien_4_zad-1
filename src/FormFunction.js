@@ -29,6 +29,7 @@ const Form = () => {
             name="amount"
             onInput={onAmountChange}
           ></input>
+          <hr/>
           <label htmlFor="tip-select">Tip: </label>
           <select name="tip-select" onChange={onTipChange}>
             <option key="0" value="">
@@ -40,6 +41,7 @@ const Form = () => {
               </option>
             ))}
           </select>
+          <hr/>
           <button type="button" onClick={handleClick}>
             Calculate
           </button>

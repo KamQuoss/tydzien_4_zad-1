@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import Form from "./Form";
+import Form from "./FormFunction";
 
 export default function App() {
   return (
