@@ -4,9 +4,9 @@ class FormClassComp extends React.Component {
   tipOptions = [5, 10, 15, 20];
   taxValue = 1.05;
   state = {
-    amount: 0,
+    amount: null,
     tip: 0,
-    toPay: 0
+    result: 0
   };
 
   onChange = (e) => {
@@ -17,15 +17,16 @@ class FormClassComp extends React.Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    let toPay =
+    if (!this.state.amount) return;
+    let result =
       (this.state.tip
         ? this.state.amount * ((100 + Number(this.state.tip)) / 100)
         : this.state.amount) * this.taxValue;
-    this.setState({ toPay: toPay.toFixed(2) });
+    this.setState({ result: result.toFixed(2) });
   };
 
   render() {
-    return this.state.toPay === 0 ? (
+    return this.state.result === 0 ? (
       <div>
         <form>
           <label htmlFor="amount">Net mount: </label>
@@ -55,7 +56,7 @@ class FormClassComp extends React.Component {
       </div>
     ) : (
       <p>
-        gross amount: <span>{this.state.toPay}</span>
+        gross amount: <span>{this.state.result}</span>
       </p>
     );
   }
